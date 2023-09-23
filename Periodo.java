@@ -4,7 +4,11 @@ public class Periodo {
 	private Boolean disponible;
 
 
-    
+    public Periodo(int hora, Boolean disponible) {
+        this.hora = hora;
+        this.disponible = disponible;
+    }
+
     public int getHora() {
         return hora;
     }
@@ -17,6 +21,13 @@ public class Periodo {
     public void setDisponible(Boolean disponible) {
         this.disponible = disponible;
     }
+
+    public String toString() {
+        return "Hora" + hora+"\n"+
+        "Disponible" + disponible+"\n";
+    }
+
+    
 
 
     

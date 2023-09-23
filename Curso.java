@@ -1,14 +1,14 @@
 public class Curso {
 
     private String id_curso;
-	private int id_sede;
+	private int id_sede;//
 	private String nombre_curso;
 	private int horario;
 	private int duración; 
 	private String dias; 
-	private int cantidad_estudiantes;
+	private int cantidad_estudiantes;//
 	private String salon_asignado;
-	private Boolean asignado;
+	private Boolean asignado;//
 	private String edificio;
 
 	
@@ -88,10 +88,13 @@ public class Curso {
 	}
 
 	public String toString() {
-		return "Curso [id_curso=" + id_curso + ", id_sede=" + id_sede + ", nombre_curso=" + nombre_curso + ", horario="
-				+ horario + ", duración=" + duración + ", dias=" + dias + ", cantidad_estudiantes="
-				+ cantidad_estudiantes + ", salon_asignado=" + salon_asignado + ", asignado=" + asignado + ", edificio="
-				+ edificio + "]";
+
+		return "Sede " + id_sede + "\n"+
+			   "Edificio "+ edificio + "\n"+
+				"Salon(y nivel) " + salon_asignado + "\n"+
+				"Id Curso "+ id_curso +  ", nombre_curso=" + nombre_curso + ", horario="
+				+ horario + ":00 , duración=" + duración + " periodos , dias=" + dias + ", cantidad_estudiantes="
+				+ cantidad_estudiantes + ", salon_asignado=" + salon_asignado;
 	}
 
 

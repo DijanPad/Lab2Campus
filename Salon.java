@@ -1,12 +1,25 @@
+import java.util.Arrays;
+
 public class Salon {
     
     private String BuildingLetter;
-    private int id_sede;
+    private int id_sede;//
     private Dias[] semana;
 	private int id_salon;
 	private int nivel;
-	private int capacidad;
+	private int capacidad;//
 
+
+
+    
+    public Salon(String buildingLetter, int id_sede, Dias[] semana, int id_salon, int nivel, int capacidad) {
+        BuildingLetter = buildingLetter;
+        this.id_sede = id_sede;
+        this.semana = semana;
+        this.id_salon = id_salon;
+        this.nivel = nivel;
+        this.capacidad = capacidad;
+    }
     public int getId_sede() {
         return id_sede;
     }
@@ -42,6 +55,14 @@ public class Salon {
     }
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
+    }
+    @Override
+    public String toString() {
+        return ", Sede " + id_sede + "\n" +
+        "Edicifio " + BuildingLetter + "\n"+
+        "Nivel " + nivel +";\n" +
+        "id_alon" + id_salon+ "\n" + 
+        Arrays.toString(semana);
     }
 
 

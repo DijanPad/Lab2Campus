@@ -1,0 +1,10 @@
+id_curso,id_sede,nombre_curso,horario,duracion,dias,cantidad_estudiantes,salon_asignado
+12345,ABC123,Matemáticas,9,2,Miércoles,24,,false,
+12345,DEF456,Historia,14,3,Jueves,30,,false,
+54321,GHI789,Ciencias,11,2,Lunes,18,,false,
+54321,JKL321,Inglés,16,1,Martes,15,,false,
+12345,MNO654,Programación,10,3,Viernes,36,,false,
+12345,PQR987,Arte,13,2,Lunes,22,,false,
+54321,STU654,Economía,15,2,Miércoles,28,,false,
+54321,VWX321,Música,12,1,Jueves,12,,false,
+12345,YZA654,Geografía,14,3,Viernes,32,,false,
