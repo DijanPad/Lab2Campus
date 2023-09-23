@@ -1,20 +1,20 @@
 public class Curso {
 
-    private String id_curso;
+    private String id_curso;//--
 	private int id_sede;//
-	private String nombre_curso;
-	private int horario;
-	private int duración; 
-	private String dias; 
+	private String nombre_curso;//--
+	private int horario;//
+	private int duración; //
+	private String dias; //
 	private int cantidad_estudiantes;//
-	private String salon_asignado;
+	private int salon_asignado;//
 	private Boolean asignado;//
-	private String edificio;
+	private String edificio;//
 
 	
 	
 	public Curso(String id_curso, int id_sede, String nombre_curso, int horario, int duración, String dias,
-			int cantidad_estudiantes, String salon_asignado, Boolean asignado, String edificio) {
+			int cantidad_estudiantes, int salon_asignado, Boolean asignado, String edificio) {
 		this.id_curso = id_curso;
 		this.id_sede = id_sede;
 		this.nombre_curso = nombre_curso;
@@ -68,10 +68,10 @@ public class Curso {
 	public void setCantidad_estudiantes(int cantidad_estudiantes) {
 		this.cantidad_estudiantes = cantidad_estudiantes;
 	}
-	public String getSalon_asignado() {
+	public int getSalon_asignado() {
 		return salon_asignado;
 	}
-	public void setSalon_asignado(String salón_asignado) {
+	public void setSalon_asignado(int salón_asignado) {
 		this.salon_asignado = salón_asignado;
 	}
 	public Boolean getAsignado() {

@@ -2,11 +2,11 @@ import java.util.Arrays;
 
 public class Salon {
     
-    private String BuildingLetter;
+    private String BuildingLetter;//
     private int id_sede;//
-    private Dias[] semana;
-	private int id_salon;
-	private int nivel;
+    private Dias[] semana;//-->
+	private int id_salon;//--
+	private int nivel;//--
 	private int capacidad;//
 
 

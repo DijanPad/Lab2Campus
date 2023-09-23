@@ -8,3 +8,39 @@ PQR987,12345,Arte,13,2,Lunes,22
 STU654,54321,Economía,15,2,Miércoles,28
 VWX321,54321,Música,12,1,Jueves,12
 YZA654,12345,Geografía,14,3,Viernes,32
+ABC111,12345,Literatura,9,2,Miércoles,24
+DEF222,12345,Química,14,3,Jueves,30
+GHI333,54321,Física,11,2,Lunes,18
+JKL444,54321,Biología,16,1,Martes,15
+MNO555,12345,Psicología,10,3,Viernes,36
+PQR666,12345,Sociología,13,2,Lunes,22
+STU777,54321,Educación Física,15,2,Miércoles,28
+VWX888,54321,Informática,12,1,Jueves,12
+YZA999,12345,Arquitectura,14,3,Viernes,32
+ABC333,12345,Medicina,9,2,Miércoles,24
+DEF444,12345,Enfermería,14,3,Jueves,30
+GHI555,54321,Pedagogía,11,2,Lunes,18
+JKL666,54321,Psiquiatría,16,1,Martes,15
+MNO777,12345,Odontología,10,3,Viernes,36
+PQR888,12345,Veterinaria,13,2,Lunes,22
+STU999,54321,Derecho,15,2,Miércoles,28
+VWX111,54321,Arquitectura,12,1,Jueves,12
+YZA222,12345,Periodismo,14,3,Viernes,32
+ABC444,12345,Arte Dramático,9,2,Miércoles,24
+DEF555,12345,Música Clásica,14,3,Jueves,30
+GHI666,54321,Danza,11,2,Lunes,18
+JKL777,54321,Pintura,16,1,Martes,15
+MNO888,12345,Escultura,10,3,Viernes,36
+PQR999,12345,Literatura Clásica,13,2,Lunes,22
+STU111,54321,Cine,15,2,Miércoles,28
+VWX222,54321,Teatro,12,1,Jueves,12
+YZA333,12345,Fotografía,14,3,Viernes,32
+ABC555,12345,Matemáticas Avanzadas,9,2,Miércoles,24
+DEF666,12345,Estadísticas,14,3,Jueves,30
+GHI777,54321,Economía Global,11,2,Lunes,18
+JKL888,54321,Marketing,16,1,Martes,15
+MNO999,12345,Finanzas,10,3,Viernes,36
+PQR111,12345,Recursos Humanos,13,2,Lunes,22
+STU222,54321,Comercio Internacional,15,2,Miércoles,28
+VWX333,54321,Administración de Empresas,12,1,Jueves,12
+YZA444,12345,Ingeniería Civil,14,3,Viernes,32

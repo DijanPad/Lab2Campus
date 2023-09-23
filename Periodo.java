@@ -1,7 +1,7 @@
 public class Periodo {
     
-    private int hora;
-	private Boolean disponible;
+    private int hora;//
+	private Boolean disponible;//
 
 
     public Periodo(int hora, Boolean disponible) {
