@@ -1,6 +1,6 @@
 public class Curso {
 
-    private int id_curso;
+    private String id_curso;
 	private int id_sede;
 	private String nombre_curso;
 	private int horario;
@@ -12,10 +12,24 @@ public class Curso {
 	private String edificio;
 
 	
-	public int getId_curso() {
+	
+	public Curso(String id_curso, int id_sede, String nombre_curso, int horario, int duración, String dias,
+			int cantidad_estudiantes, String salon_asignado, Boolean asignado, String edificio) {
+		this.id_curso = id_curso;
+		this.id_sede = id_sede;
+		this.nombre_curso = nombre_curso;
+		this.horario = horario;
+		this.duración = duración;
+		this.dias = dias;
+		this.cantidad_estudiantes = cantidad_estudiantes;
+		this.salon_asignado = salon_asignado;
+		this.asignado = asignado;
+		this.edificio = edificio;
+	}
+	public String getId_curso() {
 		return id_curso;
 	}
-	public void setId_curso(int id_curso) {
+	public void setId_curso(String id_curso) {
 		this.id_curso = id_curso;
 	}
 	public int getId_sede() {
@@ -54,10 +68,10 @@ public class Curso {
 	public void setCantidad_estudiantes(int cantidad_estudiantes) {
 		this.cantidad_estudiantes = cantidad_estudiantes;
 	}
-	public String getSalón_asignado() {
+	public String getSalon_asignado() {
 		return salon_asignado;
 	}
-	public void setSalón_asignado(String salón_asignado) {
+	public void setSalon_asignado(String salón_asignado) {
 		this.salon_asignado = salón_asignado;
 	}
 	public Boolean getAsignado() {
@@ -71,6 +85,13 @@ public class Curso {
 	}
 	public void setEdificio(String edificio) {
 		this.edificio = edificio;
+	}
+
+	public String toString() {
+		return "Curso [id_curso=" + id_curso + ", id_sede=" + id_sede + ", nombre_curso=" + nombre_curso + ", horario="
+				+ horario + ", duración=" + duración + ", dias=" + dias + ", cantidad_estudiantes="
+				+ cantidad_estudiantes + ", salon_asignado=" + salon_asignado + ", asignado=" + asignado + ", edificio="
+				+ edificio + "]";
 	}
 
 
