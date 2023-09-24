@@ -1,5 +1,14 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab2, Arrays y excepciones
+ * 22-09-2323
+ * @return Curso
+ */
+
+
 public class Curso {
 
+	//atributos
     private String id_curso;//--
 	private int id_sede;//
 	private String nombre_curso;//--
@@ -8,11 +17,11 @@ public class Curso {
 	private String dias; //
 	private int cantidad_estudiantes;//
 	private int salon_asignado;//
-	private Boolean asignado;//
-	private String edificio;//
+	private Boolean asignado;// atributo no planeado
+	private String edificio;// agregado luego de ideacion 
 
 	
-	
+	//metodos
 	public Curso(String id_curso, int id_sede, String nombre_curso, int horario, int duración, String dias,
 			int cantidad_estudiantes, int salon_asignado, Boolean asignado, String edificio) {
 		this.id_curso = id_curso;
@@ -94,7 +103,7 @@ public class Curso {
 				"Salon(y nivel) " + salon_asignado + "\n"+
 				"Id Curso "+ id_curso +  ", nombre_curso=" + nombre_curso + ", horario="
 				+ horario + ":00 , duración=" + duración + " periodos , dias=" + dias + ", cantidad_estudiantes="
-				+ cantidad_estudiantes + ", salon_asignado=" + salon_asignado;
+				+ cantidad_estudiantes + ", salon_asignado=" + salon_asignado+"\n";
 	}
 
 

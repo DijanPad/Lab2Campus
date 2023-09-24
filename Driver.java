@@ -1,8 +1,16 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab2, Arrays y excepciones
+ * 22-09-2323
+ * @return Driver
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //archivos csv, lector y escritor patrocinado por chat GPT B)
@@ -12,20 +20,23 @@ public class Driver {
 
     public static void main(String[] args){
 
+    //instancia de objetos
     ArrayList<Salon> sedes = new ArrayList<Salon>();
     String archivoCSV = "cursos.txt";
     String asignados = "asignados.txt";
     String salones = "salones.txt";
     ArrayList<Curso> cursos = new ArrayList<Curso>();
     
+    //definicion del menu
     String menu = "Universidad pesadilla"+"\n"+
     "1. Cargar archivos"+"\n"+
-    "2.Consultar Salon"+"\n"+
+    "2. Consultar Salones"+"\n"+
     "3. Asignar"+  "\n"+
     "4. Buscar Salon"+"\n"+
-    "5 Buscar Curso"+"\n"+
+    "5. Buscar Curso"+"\n"+
     "6. Imprimir Cursos Asignados"+"\n"+
-    "7. Saliras"+"\n";
+    "7. Imprimir Curso Sin asignar"+"\n"+
+    "8. Salir"+"\n";
 
 
     
@@ -58,16 +69,31 @@ public class Driver {
 
     Dias[] SemEstandar={lun,mar,mie,jue,vie,sab};
 
+//mensaje gracioso
+System.out.println("Cragando...");
 Boolean run = true;
-Scanner scanner = new Scanner(System.in);
-int recep = 0;
- recep = scanner.nextInt();
 
+//programa
 while(run==true) {
+    
     System.out.println(menu);
 
-    recep = scanner.nextInt();
-
+    //validacion de opciones
+    Scanner scanner = new Scanner(System.in);
+    int recep = 0;
+    boolean validInput = false;
+    while (!validInput) {
+            try {
+                System.out.print("Ingrese una opcion: ");
+                recep = scanner.nextInt();
+                validInput = true; 
+            } catch (InputMismatchException e) {
+                System.out.println("opcion no valida.");
+                scanner.nextLine(); 
+            }
+        }
+    
+    //pasar los datos del csv a los objetos en java
     if(recep == 1){
     //lector csv, por chat gpt
         try (BufferedReader br = new BufferedReader(new FileReader(archivoCSV))) {
@@ -116,16 +142,19 @@ try (BufferedReader br = new BufferedReader(new FileReader(salones))) {
         }
     }
 
+    //imprimir todos los salones disponibles y sus horarios
 if (recep == 2){
-for (int i = 0; i <cursos.size(); i++){
+for (int i = 0; i <sedes.size(); i++){
     System.out.println(sedes.get(i).toString());
 }
 }
+//asignar cursos a clases disponibles
 if (recep == 3) {
+for (int a=0; a<cursos.size(); a++) {
+    Curso cursi = cursos.get(a);
 for (int j=0; j<sedes.size(); j++) {
     Salon Sal = sedes.get(j);
-    for (int a=0; a<cursos.size(); a++) {
-    Curso cursi = cursos.get(a);
+
 
 Dias[]sem = sedes.get(j).getSemana();
 for (int k=0; k<sem.length; k++) {
@@ -136,6 +165,8 @@ for (int l=0; l<dia.length; l++) {
 int m=l+1;
 int n =l+2;
 
+
+//si dura un periodo
 if (cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false 
 && Sal.getCapacidad()+1 > cursi.getCantidad_estudiantes()
 && (cursi.getDias().equals(diadema)) && perry.getDisponible() == true
@@ -146,6 +177,7 @@ if (cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false
     cursi.setEdificio(Sal.getBuildingLetter());
     perry.setDisponible(false);
 
+//dos periodos
 }else if(m<=14 && cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false 
 && Sal.getCapacidad()+1 > cursi.getCantidad_estudiantes()
 && (cursi.getDias().equals(diadema)) && perry.getDisponible() == true
@@ -157,7 +189,7 @@ if (cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false
     perry.setDisponible(false);
     dia[m].setDisponible(false);
 
-
+//o tres periodos
 }else if (m<=13 && n<=14 && cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false 
 && Sal.getCapacidad() +1 > cursi.getCantidad_estudiantes()
 && (cursi.getDias().equals(diadema)) && perry.getDisponible() == true
@@ -174,6 +206,7 @@ if (cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false
 }
 }
 }
+//almacenar la imformacion en un csv nuevo
 //escritor csv, por chat gpt
     try (FileWriter writer = new FileWriter(asignados)) {
             
@@ -199,35 +232,65 @@ if (cursi.getId_sede() == Sal.getId_sede() && cursi.getAsignado() == false
             System.out.println("Datos sobrescritos con éxito en " + asignados);
         }
 }
+//buscar un salon por id
     if(recep == 4){
+//validacion de input
+        boolean validInt = false;
+        while (!validInt) {
+            try {
+                System.out.println("Ingrese el id_ del salon que esta buscando: ");
+                int find = scanner.nextInt();
+                validInt = true; 
+                for(int i = 0; i<sedes.size(); i++){
+                    if(sedes.get(i).getId_salon() == find){
 
-    }
-
-    if(recep == 5){
-
-    }
-
-    
-    if(recep == 6){
-        try (BufferedReader dr = new BufferedReader(new FileReader(asignados))) {
-            String linea;
-            while ((linea = dr.readLine()) != null) {
-                String[] valores = linea.split(",");
-                // Ahora puedes procesar los valores en el arreglo 'valores'
-                for (String valor : valores) {
-                    System.out.print(valor + " ");
-                }
-                System.out.println(); // Imprimir una nueva línea para cada fila
+                System.out.println(sedes.get(i).toString());
             }
-        } catch (IOException e2) {
-            e2.printStackTrace();
-        }
     }
-    if (recep == 7) {
+            } catch (InputMismatchException e) {
+                System.out.println("opcion no valida.");
+                scanner.nextLine(); 
+            }
+        }
+
+
+
+        
+        
+    }
+//buscar un curso por su id
+    if(recep == 5){
+        System.out.println("Ingrese el id_ del curso que esat buscando: ");
+        String catcher = scanner.nextLine();
+        String search = scanner.nextLine();
+        for(int i = 0; i<cursos.size(); i++){
+            if(cursos.get(i).getId_curso().equals(search)){
+                System.out.println(cursos.get(i).toString());
+            }
+    }
+    }
+
+//imprimir salones asignados
+    if(recep == 6){
+        for(int i = 0; i<cursos.size(); i++){
+            if(cursos.get(i).getAsignado() == true){
+                System.out.println(cursos.get(i).toString());
+            }
+    }
+}
+//imprimir salones sin asignar
+    if(recep == 7){
+        for(int i = 0; i<cursos.size(); i++){
+            if(cursos.get(i).getAsignado() == false){
+                System.out.println(cursos.get(i).toString());
+            }
+    }
+    }
+//salir
+    if (recep == 8) {
         run = !run;
-}
-else {
-    System.out.println("inrese una opcion valida");
+        System.out.println("Gracias por usar el programa");
 }
 }
-}}
+}
+}

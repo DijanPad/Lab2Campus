@@ -1,7 +1,15 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab2, Arrays y excepciones
+ * 22-09-2323
+ * @return Salon
+ */
+
 import java.util.Arrays;
 
 public class Salon {
     
+    //atributos
     private String BuildingLetter;//
     private int id_sede;//
     private Dias[] semana;//-->
@@ -11,7 +19,7 @@ public class Salon {
 
 
 
-    
+    //constructor
     public Salon(String buildingLetter, int id_sede, Dias[] semana, int id_salon, int nivel, int capacidad) {
         BuildingLetter = buildingLetter;
         this.id_sede = id_sede;
@@ -20,6 +28,8 @@ public class Salon {
         this.nivel = nivel;
         this.capacidad = capacidad;
     }
+
+    //metodos
     public int getId_sede() {
         return id_sede;
     }
@@ -62,7 +72,7 @@ public class Salon {
         "Edicifio " + BuildingLetter + "\n"+
         "Nivel " + nivel +";\n" +
         "id_alon" + id_salon+ "\n" + 
-        Arrays.toString(semana);
+        Arrays.toString(semana)+ "\n" ;
     }
 
 

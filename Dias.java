@@ -1,12 +1,20 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab2, Arrays y excepciones
+ * 22-09-2323
+ * @return Dias
+ */
+
 import java.util.Arrays;
 
 public class Dias {
 
+    //atributos
     private String name;//
     private Periodo[] periodos;
 
 
-    
+    //metodos
     public Dias(String name, Periodo[] periodos) {
         this.name = name;
         this.periodos = periodos;
@@ -27,7 +35,7 @@ public class Dias {
 
     @Override
     public String toString() {
-        return  name  + Arrays.toString(periodos);
+        return  name  + Arrays.toString(periodos)+"\n";
     }
     
 
